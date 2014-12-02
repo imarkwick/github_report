@@ -47,3 +47,7 @@ input {
   width: 100%;
 }
 
+.close {
+  text-decoration: none;
+}
+
