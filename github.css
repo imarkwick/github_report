@@ -46,3 +46,7 @@ input {
 .profile img {
   width: 100%;
 }
+
+#profile-template {
+  display: none;
+}
