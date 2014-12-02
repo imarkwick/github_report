@@ -7,7 +7,7 @@
   <body>
     <form id='add_profile'>
       <input id='username' placeholder='Enter a Github username'>
-      <button id='profile' type='submit'>Load profile</button>
+      <button type='submit'>Load profile</button>
     </form>
 
     <div class='profile-container'>
@@ -37,13 +37,15 @@
 
     <script>
       $(document).ready(function() {
-        $('#profile').on('click', function(event) {
+        $('#add_profile').submit(function(event) {
           event.preventDefault();
-          var user = $('#username').val() 
-            $.get('https://api.github.com/users/' + user, function(user){
+          var username = $('#username').val() 
+            $.get('https://api.github.com/users/'+username, function(user){
               var newProfile = Mustache.render($('#profile-template').html(), user);
               $('.profile-container').append(newProfile);
-            })  
+            }).error(function () {
+              alert ("sorry, username not found");
+            });
         });
       });
     </script>
