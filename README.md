@@ -1,4 +1,4 @@
-# Github User Search
+# Github Report
 
 This week at Makers Academy we were introduced to AJAX and SPAs.
 
